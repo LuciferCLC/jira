@@ -1,14 +1,14 @@
-export const isFalsy = value => value === 0 ? true : !!value
+export const isFalsy = (value) => (value === 0 ? false : !value);
 
 export const cleanObject = (object) => {
-  const result = { ...object }
+  const result = { ...object };
 
-  Object.keys(object).forEach((key) => {
-    const value = object[key]
+  Object.keys(result).forEach((key) => {
+    const value = result[key];
 
     if (isFalsy(value)) {
-      delete result[key]
+      delete result[key];
     }
-  })
-  return result
-}
+  });
+  return result;
+};
